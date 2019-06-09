@@ -25,7 +25,7 @@ yellow=$(snmpwalk -v1 -c public $1 1.3.6.1.2.1.43.11.1.1.9.1.4 | awk '{print $4}
 echo "Yellow ink level is at $yellow%" 
 echo ------------------
 
-if [ $black -lt 100 ] || [ $cyan -lt 10 ] || [ $magenta -lt 10 ] || [ $yellow -lt 10 ]
+if [ $black -lt 15 ] || [ $cyan -lt 15 ] || [ $magenta -lt 15 ] || [ $yellow -lt 15 ]
 then
 	echo -e "Subject: Black ink is low at $1 \n\n The black toner is low at $black%\n" | sendmail -f "Printer" -r "sender@gmail.com (Printer)" reciever1@gmail.com,reciever2@gmail.com
 
