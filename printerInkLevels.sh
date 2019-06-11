@@ -27,8 +27,9 @@ echo ------------------
 
 if [ $black -lt 15 ] || [ $cyan -lt 15 ] || [ $magenta -lt 15 ] || [ $yellow -lt 15 ]
 then
-	echo -e "Subject: Black ink is low at $1 \n\n The black toner is low at $black%\n" | sendmail -f "Printer" -r "sender@gmail.com (Printer)" reciever1@gmail.com,reciever2@gmail.com
-
+#configure your server to log in to your email provider to specify what email it comes from.
+	echo -e "Subject: Black ink is low at $1 \n\n The black toner is low at $black%\n" | mail reciever1@gmail.com,reciever2@gmail.com
+# may need to replace 'mail' with 'sendmail -f "Printer" -r "sender@gmail.com (Printer)"'
 fi
 
 
